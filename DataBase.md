@@ -49,7 +49,7 @@ docker exec -it side-project /bin/bash
 6. Host에 side-project.cbh3ou7opo5s.ap-northeast-2.rds.amazonaws.com 를 입력한다.    
 
 
-7. User에 admin, password는 개인톡으로 물어본 내용을 입력한다.     
+7. User에 admin, password는 개인톡으로 물어본 내용, Database에는 sidedb를 입력한다.     
 
 
 8. test connection으로 한 번 연결되었는지 테스트 후, apply를 누르면 끝!     
