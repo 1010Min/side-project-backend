@@ -3,6 +3,9 @@ package com.example.demo.persistence;
 import com.example.demo.domain.BoardVO;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 @Mapper
 public interface BoardMapper {
@@ -11,4 +14,18 @@ public interface BoardMapper {
             "VALUES(#{id}, #{password}, #{title}, #{contents})",
             "</script>"})
     int insertBoard(BoardVO boardVO);
+
+    @Select({"<script>",
+            "SELECT * from board",
+            "order by id desc",
+            "<if test='offset != null and page_size != null'>",
+            "LIMIT #{offset}, #{page_size}",
+            "</if>",
+            "</script>"})
+    List<BoardVO> findBoard(Integer offset, Integer page_size);
+
+    @Select({"<script>",
+            "SELECT count(*) from board",
+            "</script>"})
+    Integer countBoard();
 }

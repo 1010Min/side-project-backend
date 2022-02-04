@@ -5,10 +5,10 @@ import com.example.demo.domain.ResultVO;
 import com.example.demo.persistence.*;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.lang.Nullable;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -24,5 +24,18 @@ public class BoardController {
         } else {
             return new ResultVO(100, "fail");
         }
+    }
+    @GetMapping("/board/read")
+    public List<BoardVO> findAllBoard(@RequestParam @Nullable Integer page_number, @RequestParam @Nullable Integer page_size) {
+        Integer offset = null;
+        if (page_number != null && page_size != null) {
+            offset = (page_number - 1) * page_size;
+        }
+        return boardMapper.findBoard(offset, page_size);
+    }
+
+    @GetMapping("/board/count")
+    public Integer countBoard() {
+        return boardMapper.countBoard();
     }
 }
