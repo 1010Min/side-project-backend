@@ -17,6 +17,12 @@ public interface BoardMapper {
 
     @Select({"<script>",
             "SELECT * from board",
+            "where id = #{id}",
+            "</script>"})
+    BoardVO findOneBoard(int id);
+
+    @Select({"<script>",
+            "SELECT * from board",
             "order by id desc",
             "<if test='offset != null and page_size != null'>",
             "LIMIT #{offset}, #{page_size}",
