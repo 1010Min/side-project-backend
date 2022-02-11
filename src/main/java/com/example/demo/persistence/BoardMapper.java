@@ -17,13 +17,13 @@ public interface BoardMapper {
 
     @Select({"<script>",
             "SELECT * from board",
-            "where id = #{id}",
+            "where questionid = #{questionid}",
             "</script>"})
-    BoardVO findOneBoard(int id);
+    BoardVO findOneBoard(int questionid);
 
     @Select({"<script>",
             "SELECT * from board",
-            "order by id desc",
+            "order by questionid desc",
             "<if test='offset != null and page_size != null'>",
             "LIMIT #{offset}, #{page_size}",
             "</if>",

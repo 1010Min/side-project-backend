@@ -34,9 +34,9 @@ public class BoardController {
         return boardMapper.findBoard(offset, page_size);
     }
 
-    @GetMapping("/board/{questionid}")
-    public BoardVO findOne(@PathVariable int questionid) {
-        return boardMapper.findOneBoard(questionid);
+    @GetMapping("/board/{id}")
+    public BoardVO findOne(@PathVariable int id) {
+        return boardMapper.findOneBoard(id);
     }
 
     @GetMapping("/board/count")
