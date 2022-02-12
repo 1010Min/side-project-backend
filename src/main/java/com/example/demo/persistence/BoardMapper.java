@@ -1,6 +1,7 @@
 package com.example.demo.persistence;
 
 import com.example.demo.domain.BoardVO;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -34,4 +35,10 @@ public interface BoardMapper {
             "SELECT count(*) from board",
             "</script>"})
     Integer countBoard();
+
+    @Delete({"<script>",
+            "DELETE FROM board",
+            "WHERE questionid = #{questionid}",
+            "</script>"})
+    int deleteBoard(int questionid);
 }

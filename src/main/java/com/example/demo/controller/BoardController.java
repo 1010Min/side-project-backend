@@ -43,4 +43,15 @@ public class BoardController {
     public Integer countBoard() {
         return boardMapper.countBoard();
     }
+
+    @DeleteMapping("/board")
+    public ResultVO removeBoard(@RequestParam int questionid) {
+        int result = boardMapper.deleteBoard(questionid);
+
+        if (result > 0) {
+            return new ResultVO(0, "success");
+        } else {
+            return new ResultVO(100, "fail");
+        }
+    }
 }
