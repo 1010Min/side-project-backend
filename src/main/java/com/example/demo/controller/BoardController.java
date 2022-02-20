@@ -5,7 +5,6 @@ import com.example.demo.domain.ResultVO;
 import com.example.demo.persistence.*;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,12 +25,8 @@ public class BoardController {
         }
     }
     @GetMapping("/board/read")
-    public List<BoardVO> findAllBoard(@RequestParam @Nullable Integer page_number, @RequestParam @Nullable Integer page_size) {
-        Integer offset = null;
-        if (page_number != null && page_size != null) {
-            offset = (page_number - 1) * page_size;
-        }
-        return boardMapper.findBoard(offset, page_size);
+    public List<BoardVO> findAllBoard() {
+        return boardMapper.findBoard();
     }
 
     @GetMapping("/board/{id}")
