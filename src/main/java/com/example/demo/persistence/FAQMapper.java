@@ -10,6 +10,7 @@ import java.util.List;
 public interface FAQMapper {
     @Select({
             "SELECT * from FAQ",
-            "order by questionid desc"})
+            "order by questionid",
+    })
     List<FaqVO> findAll();
 }
