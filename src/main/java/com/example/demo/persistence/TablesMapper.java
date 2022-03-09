@@ -4,10 +4,10 @@ import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
-public interface TableMapper {
+public interface TablesMapper {
     @Select({"<script>",
-            "SELECT * from table",
-            "order by id desc",
+            "SELECT * from IT",
+            "order by id",
             "</script>"})
     List<TableVO> findTable();
 

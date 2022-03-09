@@ -8,8 +8,8 @@ import lombok.Data;
 
 public class TableVO {
     private Integer id;
-    private String lectureForm;
-    private String lectureName;
+    private String 강의형태;
+    private String 강의명;
     private String lectureNum;
     private String lectureClass;
     private String plan;
