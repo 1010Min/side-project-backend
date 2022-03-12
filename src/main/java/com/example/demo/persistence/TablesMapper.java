@@ -9,6 +9,6 @@ public interface TablesMapper {
             "SELECT * from IT",
             "order by id",
             "</script>"})
-    List<TableVO> findTable();
+    List<TableVO> findITTable();
 
 }

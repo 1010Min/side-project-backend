@@ -21,8 +21,8 @@ public class TableController {
 
     private final TablesMapper tablesMapper;
 
-    @GetMapping("/tables")
-    public List<TableVO> findAll() {
-        return tablesMapper.findTable();
+    @GetMapping("/tables/it")
+    public List<TableVO> findIT() {
+        return tablesMapper.findITTable();
     }
 }
