@@ -25,4 +25,19 @@ public class TableController {
     public List<TableVO> findIT() {
         return tablesMapper.findITTable();
     }
+
+    @GetMapping("/tables/gyoyang")
+    public List<TableVO> findGyo() {
+        return tablesMapper.findGyoTable();
+    }
+
+    @GetMapping("/tables/jinro")
+    public List<TableVO> findJinro() {
+        return tablesMapper.findJinroTable();
+    }
+
+    @GetMapping("/tables/ba")
+    public List<TableVO> findBA() {
+        return tablesMapper.findBATable();
+    }
 }

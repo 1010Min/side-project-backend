@@ -11,4 +11,22 @@ public interface TablesMapper {
             "</script>"})
     List<TableVO> findITTable();
 
+    @Select({"<script>",
+            "SELECT * from Gyoyang",
+            "order by id",
+            "</script>"})
+    List<TableVO> findGyoTable();
+
+    @Select({"<script>",
+            "SELECT * from Jinro",
+            "order by id",
+            "</script>"})
+    List<TableVO> findJinroTable();
+
+    @Select({"<script>",
+            "SELECT * from BusinessAdministration",
+            "order by id",
+            "</script>"})
+    List<TableVO> findBATable();
+
 }
