@@ -24,4 +24,7 @@ public class ApplicationVO {
     private String retake;
     private String lectureLanguage;
     private Integer cancel;
+    private Integer lecturePeople;
+    private Integer lectureApply;
+    private Integer myRank;
 }
